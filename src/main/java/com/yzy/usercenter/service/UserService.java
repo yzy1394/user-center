@@ -19,7 +19,7 @@ public interface UserService extends IService<User> {
      * @param code 编号
      * @return 新用户id
      */
-    long userRegister(String userAccount,String userPassword,String checkPassword,String code);
+    long userRegister(String userAccount,String userPassword,String checkPassword,String code,String userName);
 
     /**
      * @param userAccount

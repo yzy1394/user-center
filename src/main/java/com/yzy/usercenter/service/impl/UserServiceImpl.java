@@ -42,7 +42,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     private Mapper mapper;
 
     @Override
-    public long userRegister(String userAccount, String userPassword, String checkPassword,String code) {
+    public long userRegister(String userAccount, String userPassword, String checkPassword,String code,String userName) {
         //1.校验
         if(StringUtils.isAllBlank(userAccount,userPassword,checkPassword,code)){
             throw new BusinessException(ErrorCode.PARAMS_ERROR,"参数为空");
@@ -55,6 +55,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         }
         if(code.length()>5){
             throw new BusinessException(ErrorCode.PARAMS_ERROR,"编号过长");
+        }
+        if(userName.length()>12){
+            throw new BusinessException(ErrorCode.PARAMS_ERROR,"用户名过长");
+        }
+        if(userName.length()<2){
+            throw new BusinessException(ErrorCode.PARAMS_ERROR,"用户名过短");
         }
         //校验账户不能包含特殊字符
         String validPattern="[`~!@#$%^&*()+=|{}':;',\\\\[\\\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]";
@@ -83,6 +89,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         user.setUserAccount(userAccount);
         user.setUserPassword(encryptPassword);
         user.setCode(code);
+        user.setUsername(userName);
         boolean saveResult = this.save(user);
         if(!saveResult){
             throw new BusinessException(ErrorCode.PARAMS_ERROR,"该用户已注册");

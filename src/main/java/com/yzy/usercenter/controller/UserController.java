@@ -33,17 +33,17 @@ public class UserController {
     @PostMapping("/register")
     public BaseResponse<Long> userRegister(@RequestBody UserRegisterRequest userRegisterRequest){
         if(userRegisterRequest==null){
-            //  return ResultUtils.error(ErrorCode.PARAMS_ERROR);
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
         String userAccount=userRegisterRequest.getUserAccount();
         String userPassword=userRegisterRequest.getUserPassword();
         String checkPassword=userRegisterRequest.getCheckPassword();
+        String userName=userRegisterRequest.getUserName();
         String code=userRegisterRequest.getCode();
         if(StringUtils.isAnyBlank(userAccount,userPassword,checkPassword,code)){
             throw new BusinessException(ErrorCode.NULL_ERROR);
         }
-        long result = userService.userRegister(userAccount, userPassword, checkPassword,code);
+        long result = userService.userRegister(userAccount, userPassword, checkPassword,code,userName);
         return ResultUtils.success(result );
     }
 
@@ -84,16 +84,18 @@ public class UserController {
     }
 
     @GetMapping("/search")
-    public BaseResponse<List<User>> searchUsers(String username,HttpServletRequest request){
-        if(!isAdmin(request)){
+    public BaseResponse<List<User>> searchUsers(@RequestParam String username, HttpServletRequest request) {
+        if (!isAdmin(request)) {
             throw new BusinessException(ErrorCode.NO_AUTH);
         }
-        QueryWrapper<User> queryWrapper=new QueryWrapper<>();
-        if(StringUtils.isNoneBlank(username)){
-            queryWrapper.like("username",username);
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        if (StringUtils.isNotBlank(username)) {
+            queryWrapper.like("username", username);
         }
-        List<User> userList=userService.list(queryWrapper);
-        List<User> list= userList.stream().map(user->{return userService.getSafetyUser(user);}).collect(Collectors.toList());
+        List<User> userList = userService.list(queryWrapper);
+        List<User> list = userList.stream()
+                .map(user -> userService.getSafetyUser(user))
+                .collect(Collectors.toList());
         return ResultUtils.success(list);
     }
 
@@ -129,7 +131,7 @@ public class UserController {
 
 
     @PostMapping("/delete")
-    public BaseResponse<Boolean> deleteUsers(@RequestBody long id,HttpServletRequest request){
+    public BaseResponse<Boolean> deleteUsers(@RequestParam int id,HttpServletRequest request){
         if(!isAdmin(request)){
             throw new BusinessException(ErrorCode.NO_AUTH);
         }
