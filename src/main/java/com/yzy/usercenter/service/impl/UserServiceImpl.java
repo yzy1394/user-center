@@ -190,13 +190,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         if(matcher.find()){
             throw new BusinessException(ErrorCode.PARAMS_ERROR,"账号不能包含特殊字符");
         }
-        //账户不能重复
         QueryWrapper<User> queryWrapper=new QueryWrapper<>();
-        queryWrapper.eq("userAccount",userAccount);
-        long count=userMapper.selectCount(queryWrapper);
-        if(count > 0){
-            throw new BusinessException(ErrorCode.PARAMS_ERROR,"账号重复");
-        }
         //编号必须存在
         if(!checkCode(code)){
             throw new BusinessException(ErrorCode.PARAMS_ERROR,"编号不存在");
