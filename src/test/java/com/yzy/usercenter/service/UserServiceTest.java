@@ -33,7 +33,8 @@ public class UserServiceTest {
         String userPassword="12345678";
         String checkPassword="12345678";
         String code="2";
-        long result = userService.userRegister(userAccount, userPassword, checkPassword,code);
+        String userName="yuan";
+        long result = userService.userRegister(userAccount, userPassword, checkPassword,code,userName);
 //        Assertions.assertEquals(-1,result);
 //        userAccount="y";
 //        result = userService.userRegister(userAccount, userPassword, checkPassword,code);
