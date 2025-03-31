@@ -1,66 +1,66 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.5</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
-    <packaging>jar</packaging>
-    <groupId>com.yupi</groupId>
-    <artifactId>user-center</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>user-center</name>
-    <description>user-center</description>
-    <properties>
-        <java.version>17</java.version>
-    </properties>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.23</version>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
+<
+         xsi：示意图=“ http://maven.apache.org/pom/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.0.0.0.xsd f.schemalocation：schemalocation= for https://maven.apache.org/xsd/maven-4.0.0.xsd“>
+    <modelversion> 4.0.0 < / modelversion > <modelversion> 4.0.0 < / modelversion >​​
+    <父> <父>
+        <groupId> org.springframework.boot < / groupid > <groupId> org.springframework.boot < / groupid >​​
+        <Artifactid>弹簧启动-父母< / artifactid > <Artifactid> spring- boot -starter - parent < / artifactid >
+        <版本> 3.3.5 </ version > <版本> 3.3.5 </ version >
+        <selverypath />   <！- >> < selverPath / >   <！-储存库 - >  - >
+    </ parent >  </ parent >
+    <包装> jar </包装><包装> jar </ packaging >
+    <groupId> com.yupi groupId < / >>
+    <Artifactid>用户中心< / artifactid > <Artifactid> < / artifactid >
+    <版本>> 0.0.1 - snapshot < / version >  < /版>
+    <名称> < / name >  </ name > < / name >
+    <description> < / descript ​
+    <pohories> <properties> ​​​​
+        < Java.version > 17 </ java.version >  < Java.version > 17 </ java.version>
+    </权利>  </ properties >
+    <依赖项>  <依赖项>
+        <依赖项>  <依赖项>
+            <groupId> org.springframework.boot < / groupid > <groupId> org.springframework.boot < / groupid >
+            <Artifactid> spring- boot -starter-web < / artifactid > <trifactid> spring-boot - starter- web- web- web < / artifactid > 
+        </依赖项>  </ dependency >
+        <依赖项>  <依赖项>
+            <groupId> org.springframework.boot < / groupid > <groupId> org.springframework.boot < / groupid >
+            <Artifactid> Spring-启动-  DevTools < / artifactid > <Artifactid> spring -boot -devtools < / artifactid > 
+            <scope> Runtime < / scope > <Scepe> Runtime < / scope >​​
+            <可选> true < / optional > <otional> true < / optional >
+        </ dependency > </ dependency >
+        <依赖项> <依赖项>
+            <groupId> mySQL </ groupId> <groupId> mySQL < / groupId >
+            <Artifactid> mysql -connector -java < / artifactid ><Artifactid > MySQL -Connector -Java < / artifactid>
+            <版本 8.0.23<// version
+        </ dependency >  </ dependency >
+        <依赖项>  <依赖项>
+            <groupId> org.projectlombok < / groupId > <groupId> org.projectlombok < / groupId >
+            <Artifactid> Lombok < / artifactid > <Artifactid> Lombok < / artifactid >​​
+            <可选> true < / optional > <otional> true < / optional >
+        </ dependency > </ dependency >
+        <依赖项> <依赖项>
+            <groupId> org.springframework.boot </groupId><groupId>org.springframework.boot</groupId>
+            <Artifactid>弹簧启动测试</artifactid><artifactId>spring-boot-starter-test</artifactId>
+            <Scope>测试</scope><scope>test</scope>
+        </dependency></dependency>
 <!--        <dependency>-->
 <!--            <groupId>org.mybatis.spring.boot</groupId>-->
 <!--            <artifactId>mybatis-spring-boot-starter</artifactId>-->
 <!--            <version>4.3.0</version>-->
 <!--        </dependency>-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
-            <version>3.5.7</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.12.0</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
+        <依赖项><dependency>
+            <groupId> com.baomidou </groupid><groupId>com.baomidou</groupId>
+            <Artifactid> mybatis-plus-spring-boot3-starter </artifactid><artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+            <版本> 3.5.7 </version><version>3.5.7</version>
+        </dependency></dependency>
+        <依赖项><dependency>
+            <groupId> org.apache.commons </groupId><groupId>org.apache.commons</groupId>
+            <Artifactid> Commons-lang3 </artifactid><artifactId>commons-lang3</artifactId>
+            <版本> 3.12.0 </version><version>3.12.0</version>
+        </dependency></dependency>
+        <依赖项><dependency>
+            <groupId> junit </groupid><groupId>junit</groupId>
+            <Artifactid> Junit </artifactid><artifactId>junit</artifactId>
+            <Scope>测试</scope><scope>test</scope>
         </dependency>
         <dependency>
             <groupId>javax.annotation</groupId>
